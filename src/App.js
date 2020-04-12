@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import Product from "./Components/Product";
@@ -7,7 +7,7 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      Products :[]
+      Products: []
     };
   }
 
@@ -25,18 +25,18 @@ class App extends Component {
   }
 
   render() {
-    const {Products} = this.state
+    const { Products } = this.state
     return (
       <div className="container">
-      <h1>Ecommerce Shopping Cart Application</h1>   
-      <hr/>
+        <h1>Ecommerce Shopping Cart Application</h1>
+        <hr />
 
-      <div className="row">
-          <div className="col-md-8">
-            <Product Products={Products}/>
+        <div className="row">
+          <div >
+            <Product Products={Products} />
           </div>
-      </div>   
-    </div>
+        </div>
+      </div>
     )
   }
 }

@@ -40,21 +40,17 @@ class Product extends Component {
                 />
                 <CardContent>
                   <Typography gutterBottom variant="h5" component="h2">
-                    Lizard
-              </Typography>
-                  <Typography component="p">
-                    Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging
-                    across all continents except Antarctica
-              </Typography>
+                    {data.title}
+                </Typography>
+                <Typography component="p">
+                    {data.description}
+                </Typography>
                 </CardContent>
               </CardActionArea>
               <CardActions>
-                <Button size="small" color="primary">
-                  Share
-            </Button>
-                <Button size="small" color="primary">
-                  Learn More
-            </Button>
+                <Button size="large" color="primary">
+                  Add to Cart
+                </Button>
               </CardActions>
             </Card>
           )
