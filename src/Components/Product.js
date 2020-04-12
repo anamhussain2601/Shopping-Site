@@ -28,14 +28,15 @@ class Product extends Component {
       <div>
         {Products.map((data) => {
           return (
-            <Card className={classes.card}>
+            <Card className={classes.card} style={{width:'250px'}}>
               <CardActionArea>
                 <CardMedia
                   component="img"
                   alt="Contemplative Reptile"
                   className={classes.media}
-                  height="140"
-                  image="/static/images/cards/contemplative-reptile.jpg"
+                  height="100%"
+                  width="100%"
+                  image={`products/${data.sku}_2.jpg`}
                   title="Contemplative Reptile"
                 />
                 <CardContent>

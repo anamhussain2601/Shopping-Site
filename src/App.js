@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 import Product from "./Components/Product";
+import Filter from './Components/Filter';
 
 class App extends Component {
   constructor() {
@@ -24,15 +24,30 @@ class App extends Component {
       });
   }
 
+  handleSortChange = (e) => {
+    console.log('jhi')
+  }
+  handleSizeChange = (e) => {
+    console.log('jhi')
+  }
+
   render() {
     const { Products } = this.state
     return (
       <div className="container">
         <h1>Ecommerce Shopping Cart Application</h1>
         <hr />
+        <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+          <p>x Product found.</p>
+          <Filter
+            handleSortChange={this.handleSortChange}
+            handleSizeChange={this.handleSizeChange}
+          />
+        </div>
+        <hr />
 
         <div className="row">
-          <div >
+          <div className="col-md-9" style={{ width: null }}>
             <Product Products={Products} />
           </div>
         </div>
