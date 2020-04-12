@@ -32,34 +32,28 @@ class Filter extends Component {
         return (
             <form className={classes.root} autoComplete="off">
                 <FormControl className={classes.formControl}>
-                    <InputLabel style={{color:'white'}}>Order By</InputLabel>
+                    <InputLabel style={{ color: 'white' }}>Order By</InputLabel>
                     <Select
                         value={this.props.sort}
                         onChange={this.props.handleSortChange}
                     >
-                        <MenuItem value="">
-                            <em>None</em>
-                        </MenuItem>
-                        <MenuItem value={''}>All</MenuItem>
+                        <MenuItem value={'A'}>All</MenuItem>
                         <MenuItem value={'lowToHigh'}>Low to High</MenuItem>
                         <MenuItem value={'highTolow'}>High to Low</MenuItem>
                     </Select>
                 </FormControl>
                 <FormControl className={classes.formControl}>
-                    <InputLabel style={{color:'white'}}>Filter Size</InputLabel>
+                    <InputLabel style={{ color: 'white' }}>Filter Size</InputLabel>
                     <Select
                         value={this.props.size}
                         onChange={this.props.handleSizeChange}
                     >
-                        <MenuItem value="">
-                            <em>None</em>
-                        </MenuItem>
-                        <MenuItem value={''}>All</MenuItem>
+                        <MenuItem value={'A'}>All</MenuItem>
                         <MenuItem value={'S'}>S</MenuItem>
                         <MenuItem value={'M'}>M</MenuItem>
                         <MenuItem value={'L'}>L</MenuItem>
                         <MenuItem value={'XL'}>XL</MenuItem>
-                        <MenuItem value={'XXL'}>L</MenuItem>
+                        <MenuItem value={'XXL'}>XXL</MenuItem>
                     </Select>
                 </FormControl>
             </form>

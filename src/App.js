@@ -7,7 +7,9 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      Products: []
+      Products: [],
+      size: "",
+      sort: "",
     };
   }
 
@@ -25,11 +27,42 @@ class App extends Component {
   }
 
   handleSortChange = (e) => {
-    console.log('jhi')
+    console.log(e.target.value)
+    this.setState({ sort: e.target.value });
+    this.listProducts()
   }
   handleSizeChange = (e) => {
-    console.log('jhi')
+    console.log(e.target.value)
+    this.setState({ size: e.target.value });
+    this.listProducts()
+
   }
+
+  listProducts = () => {
+    this.setState(state => {
+      if (state.sort !== "A") {
+        state.Products.sort((a, b) =>
+          state.sort === "lowToHigh"
+            ? a.price > b.price
+              ? 1
+              : -1
+            : a.price < b.price
+            ? 1
+            : -1
+        );
+      } else {
+        state.Products.sort((a, b) => (a.id > b.id ? 1 : -1));
+      }
+      if (state.size !== "A") {
+        return {
+          filteredProducts: state.Products.filter(
+            a => a.availableSizes.indexOf(state.size) >= 0
+          )
+        };
+      }
+      return { filteredProducts: state.Products };
+    });
+  };
 
   render() {
     const { Products } = this.state

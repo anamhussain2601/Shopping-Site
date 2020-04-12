@@ -28,28 +28,35 @@ class Product extends Component {
       <div>
         {Products.map((data) => {
           return (
-            <Card className={classes.card} style={{width:'250px'}}>
+            <Card className={classes.card} style={{ width: '250px' }}>
               <CardActionArea>
                 <CardMedia
                   component="img"
                   alt="Contemplative Reptile"
-                  className={classes.media}
+                  // className={classes.media}
                   height="100%"
                   width="100%"
                   image={`products/${data.sku}_2.jpg`}
-                  title="Contemplative Reptile"
                 />
                 <CardContent>
-                  <Typography gutterBottom variant="h5" component="h2">
+                  <p>
                     {data.title}
-                </Typography>
-                <Typography component="p">
+                  </p>
+                  <p>
+                    {data.availableSizes.map((size) => {
+                      return `${size} `
+                    })}
+                  </p>
+                  <p>
                     {data.description}
-                </Typography>
+                  </p>
                 </CardContent>
               </CardActionArea>
-              <CardActions>
-                <Button size="large" color="primary">
+              <CardActions style={{display:"flex", justifyContent:"space-between"}}>
+                <p >
+                  {`${data.price}$`}
+                </p>
+                <Button size="large" style={{fontSize:'1em',background:'antiquewhite'}}>
                   Add to Cart
                 </Button>
               </CardActions>
